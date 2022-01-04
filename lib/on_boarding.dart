@@ -25,7 +25,7 @@ class OnBoardingPage extends StatelessWidget {
               body: 'Start your journey',
               footer: ButtonWidget(
                 text: 'Explore Wild Animal',
-                onClicked: () => goToHome(context),
+                onClicked: () => goToLogin(context),
               ),
               image: buildImage('assets/images/rhino.jpg'),
               decoration: getPageDecoration(),
