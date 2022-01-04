@@ -32,7 +32,10 @@ class OnBoardingPage extends StatelessWidget {
             ),
           ],
           done: const Text('Read', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xFFE0E0E0))),
-          onDone: () => goToLogin(context),
+          onDone: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Login()));
+          },
           showSkipButton: true,
           skip: const Text('Skip',style: TextStyle(fontSize: 18,color: Color(0xFF545454))),
           onSkip: () => goToLogin(context),
@@ -47,7 +50,7 @@ class OnBoardingPage extends StatelessWidget {
   }
 
   void goToLogin(context) => Navigator.of(context).pushReplacement(
-    MaterialPageRoute(builder: (_) => Login()),
+    MaterialPageRoute(builder: (_) =>  Login()),
   );
 
   Widget buildImage(String path) =>
