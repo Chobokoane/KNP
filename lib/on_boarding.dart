@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:kruger_national_park/ui/home_page.dart';
+import 'package:kruger_national_park/ui/login.dart';
 import 'package:kruger_national_park/ui/widget/button_widget.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -31,10 +32,10 @@ class OnBoardingPage extends StatelessWidget {
             ),
           ],
           done: const Text('Read', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xFFE0E0E0))),
-          onDone: () => goToHome(context),
+          onDone: () => goToLogin(context),
           showSkipButton: true,
           skip: const Text('Skip',style: TextStyle(fontSize: 18,color: Color(0xFF545454))),
-          onSkip: () => goToHome(context),
+          onSkip: () => goToLogin(context),
           next: const Icon(Icons.arrow_forward,size:22,color: Color(0xFF545454),),
           dotsDecorator: getDotDecoration(),
           globalBackgroundColor:  const  Color(0xFFE0E0E0),
@@ -45,8 +46,8 @@ class OnBoardingPage extends StatelessWidget {
     );
   }
 
-  void goToHome(context) => Navigator.of(context).pushReplacement(
-    MaterialPageRoute(builder: (_) => Home()),
+  void goToLogin(context) => Navigator.of(context).pushReplacement(
+    MaterialPageRoute(builder: (_) => Login()),
   );
 
   Widget buildImage(String path) =>
