@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "129069061952",
+    "project_id": "kruger-national-park-b47c8",
+    "storage_bucket": "kruger-national-park-b47c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129069061952:android:9fb4db2ad0d2bfe26d0ca5",
+        "android_client_info": {
+          "package_name": "com.example.kruger_national_park"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129069061952-ggfilk1ii0vmp4c4efpvb7lsfuitgkih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK2mg_2TYMef7o95B0s03M-jiDO8lMJcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129069061952-ggfilk1ii0vmp4c4efpvb7lsfuitgkih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

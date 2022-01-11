@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:kruger_national_park/ui/home_page.dart';
-import 'package:kruger_national_park/ui/login.dart';
+import 'package:kruger_national_park/ui/views/login_view.dart';
 import 'package:kruger_national_park/ui/widget/button_widget.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -34,7 +34,7 @@ class OnBoardingPage extends StatelessWidget {
           done: const Text('Read', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xFFE0E0E0))),
           onDone: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Login()));
+                context, MaterialPageRoute(builder: (context) => LoginView()));
           },
           showSkipButton: true,
           skip: const Text('Skip',style: TextStyle(fontSize: 18,color: Color(0xFF545454))),
@@ -50,7 +50,7 @@ class OnBoardingPage extends StatelessWidget {
   }
 
   void goToLogin(context) => Navigator.of(context).pushReplacement(
-    MaterialPageRoute(builder: (_) =>  Login()),
+    MaterialPageRoute(builder: (_) =>  LoginView()),
   );
 
   Widget buildImage(String path) =>
