@@ -1,12 +1,21 @@
-import 'package:flutter/gestures.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:kruger_national_park/ui/views/register_view.dart';
+import 'package:kruger_national_park/ui/views/home_view.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
+
+  LoginView({Key? key,}) : super(key: key);
+
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
   final emailController = TextEditingController();
+
   final passwordController = TextEditingController();
 
-  LoginView({Key? key}) : super(key: key);
+  final fireBaseAuth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -114,11 +123,21 @@ class LoginView extends StatelessWidget {
                                   'Sign In'.toUpperCase(),
                                   style: const TextStyle(color: Colors.white),
                                 ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => SignView()),
-                                  );
+                                onPressed: () async {
+//                                  try{
+//                                    await fireBaseAuth.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text);
+//                                    onComplete();
+//                                  }on FirebaseAuthException catch(e){
+//                                    return e.message;
+//                                  }
+                                  loginIn((){
+                                    print("It reaches here");
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeView()),
+                                    );
+                                  });
                                 },
                               ),
                             )),
@@ -169,6 +188,15 @@ class LoginView extends StatelessWidget {
                 ],
               )),
         ));
+  }
+
+  Future loginIn(Function onComplete) async{
+    try{
+     await fireBaseAuth.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text);
+     onComplete();
+    }on FirebaseAuthException catch(e){
+      return e.message;
+    }
   }
 }
 
